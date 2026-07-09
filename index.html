@@ -4,12 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disney Live Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>🏰 Disney Live Dashboard</h1>
+<header>
+    <h1>🏰 Disney Live Dashboard</h1>
+    <p>Your personal Disney livestream control room</p>
+</header>
 
-<p>If you're seeing this page, it's working!</p>
+<main>
+
+    <section class="live-section">
+        <h2>🔴 Live Now</h2>
+
+        <div id="liveContainer" class="cards">
+
+            <div class="card placeholder">
+                <h3>No live streams yet</h3>
+                <p>Once we connect YouTube, live streams will appear here.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="offline-section">
+
+        <h2>⚫ Offline Channels</h2>
+
+        <div id="offlineContainer" class="cards">
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="script.js"></script>
 
 </body>
 </html>
