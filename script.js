@@ -1,30 +1,26 @@
-const channels = [
-    "Theme Park Giant",
-    "Ron On The Go",
-    "Daily FastPass",
-    "Disney With Sean",
-    "That Crazy Disney Lady",
-    "Disney Parks With Love",
-    "Fun To Be Free",
-    "ResortTV1",
-    "Main Street Voyager",
-    "Goo To You",
-    "Disney Girl Kim",
-    "Living in Diz"
-];
+async function loadChannels() {
 
-const offlineContainer = document.getElementById("offlineContainer");
+    const response = await fetch("channels.json");
+    const channels = await response.json();
 
-channels.forEach(channel => {
+    const offlineContainer = document.getElementById("offlineContainer");
 
-    const card = document.createElement("div");
-    card.className = "card";
+    offlineContainer.innerHTML = "";
 
-    card.innerHTML = `
-        <h3>${channel}</h3>
-        <p>Offline</p>
-    `;
+    channels.forEach(channel => {
 
-    offlineContainer.appendChild(card);
+        const card = document.createElement("div");
+        card.className = "card";
 
-});
+        card.innerHTML = `
+            <h3>${channel.name}</h3>
+            <p>Offline</p>
+        `;
+
+        offlineContainer.appendChild(card);
+
+    });
+
+}
+
+loadChannels();
