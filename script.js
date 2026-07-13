@@ -7,18 +7,16 @@ async function loadChannels() {
     const liveCount = document.getElementById("liveCount");
     const lastUpdated = document.getElementById("lastUpdated");
 
-    // Update the status bar
     liveCount.textContent = "🔴 Live: 0";
     lastUpdated.textContent =
-        "Last updated: " + new Date().toLocaleTimeString([], {
+        "Last updated: " +
+        new Date().toLocaleTimeString([], {
             hour: "numeric",
             minute: "2-digit"
         });
 
-    // Clear existing cards
     offlineContainer.innerHTML = "";
 
-    // Build one card for each channel
     channels.forEach(channel => {
 
         const card = document.createElement("div");
@@ -34,9 +32,21 @@ async function loadChannels() {
                 <div class="channel-info">
                     <h3>${channel.name}</h3>
                     <p>${channel.handle}</p>
-                    <span class="offline-badge">⚫ Offline</span>
+
+                    <span class="offline-badge">
+                        ⚫ Offline
+                    </span>
+
+                    <button class="watch-button">
+                        Watch
+                    </button>
+
                 </div>
 
+            </div>
+
+            <div class="player-placeholder">
+                Live player will appear here.
             </div>
         `;
 
