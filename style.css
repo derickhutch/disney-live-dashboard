@@ -74,3 +74,48 @@ h2{
 .status-bar span {
     font-weight: 600;
 }
+.channel-card{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.avatar{
+    width:64px;
+    height:64px;
+
+    border-radius:50%;
+
+    background:#374151;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:1.8rem;
+
+    flex-shrink:0;
+}
+
+.channel-info h3{
+    margin:0;
+    font-size:1.1rem;
+}
+
+.channel-info p{
+    margin:6px 0;
+    color:#9ca3af;
+    font-size:.9rem;
+}
+
+.offline-badge{
+    display:inline-block;
+
+    background:#374151;
+
+    padding:5px 10px;
+
+    border-radius:999px;
+
+    font-size:.8rem;
+}
